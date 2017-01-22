@@ -1,0 +1,75 @@
+<!Doctype html>
+<html>
+<head>
+  <title>3D Matrix</title>
+  <style type="text/css">
+    #main {
+      display: flex;
+      align-content: flex-start;
+      height: 50vh;
+      box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    #work {
+      box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.05);
+      width: 50%;
+      display: flex;
+      flex-flow: column;
+    }
+
+    #stream {
+      height: 90%;
+      font-size: 16px;
+    }
+    #process {
+      height: 10%;
+      font-size: 18px;
+    }
+
+    #results {
+      width: 50%;
+      box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.05);
+      padding: 10px;
+      padding-top: 0px;
+    }
+    
+  </style>
+</head>
+<body>
+  <main id='main'>
+    <section id='work'>
+      <textarea id='stream' autofocus placeholder="Write your testCase here!, or simply press process button!"></textarea>
+      <button id='process' onclick="process()">Process</button>
+    </section>
+    <sections id='results'>
+      <div id="instructions">
+        <h3>Instructions</h3>
+        <p>If you don't have a test, only press process button.</p>
+        <a href='https://www.hackerrank.com/challenges/cube-summation' target="_blank">for more details.</a><br />
+        <h4>Default TestCase</h4>
+        
+        <kbd>
+            2<br />
+            4 5<br />
+            UPDATE 2 2 2 4<br />
+            QUERY 1 1 1 3 3 3<br />
+            UPDATE 1 1 1 23<br />
+            QUERY 2 2 2 4 4 4<br />
+            QUERY 1 1 1 3 3 3<br />
+            2 4<br />
+            UPDATE 2 2 2 1<br />
+            QUERY 1 1 1 1 1 1<br />
+            QUERY 1 1 1 2 2 2<br />
+            QUERY 2 2 2 2 2 2
+        </kbd><br />
+        <code>output: 4,4,27,0,1,1</code>
+      </div>
+      <h5>Output:</h5>
+      <div id='result'>
+
+      </div>
+    </section>
+  </main>
+  <script src="solution.js"></script>
+</body>
+</html>
