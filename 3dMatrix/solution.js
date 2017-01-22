@@ -62,16 +62,14 @@ const mapping = (buffer) => {
   return out
 }
 
-/**
- * Fenwick 3D matrix
- */
-const fenwick3DTree = dimension => {
+const createMatrix = dimension => new Array(dimension).fill(0)
+          .map(() => new Array(dimension).fill()
+          .map(() => new Array(dimension).fill(0)))
 
-}
 
-const validate = (value, condition) => {
-  return 1 <= value && value <= condition
-}
+//console.log(matrix, 'start', start)
+
+const validate = (value, condition) => (1 <= value && value <= condition)
 
 const init = input => {
   const buffer = input
@@ -82,14 +80,17 @@ const init = input => {
   if (validate(T, 50)) { // rule 1 : 1 <= T <= 50 
     const testCases = mapping(buffer) // TEST: assert T === testCases.length
     
-    testCases.each(test => {
+    for (key in testCases) {
+      const test = testCases[key]
       if (validate(test.dimension, 100) && 
           validate(test.size, 1000)) { // rules 2: 1 <= N <= 100, 3: 1 <= M <= 1000
             // create a matrix
+            const matrix = createMatrix(test.dimension) 
+            console.log(matrix[1][1][1])
       }
-    })
+    }
     
-    console.log(T, JSON.stringify(testCases, null, 2) )
+    // console.log(T, JSON.stringify(testCases, null, 2) )
   }  
 }
 
