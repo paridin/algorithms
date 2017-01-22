@@ -3,7 +3,7 @@
  * https://www.hackerrank.com/challenges/cube-summation
  * Created by Roberto Estrada 21/01/17
  */
-const input = `2
+const demo = `2
 4 5
 UPDATE 2 2 2 4
 QUERY 1 1 1 3 3 3
@@ -127,9 +127,19 @@ const init = input => {
             results.push(result)
       }
     }
-    results = results.reduce((a, b) => a.concat(b), []) // flat arrays
-    results.map(result => console.log(result)) // output resuls
+    return results.reduce((a, b) => a.concat(b), []) // flat arrays
   }
 }
 
-init(input)
+function process() {
+  const stream = document.getElementById('stream').value
+  console.log(stream, typeof stream, stream.length)
+  if (stream) {
+    input = stream
+  } else {
+    input = demo
+  }
+  console.log(input)
+  const results = init(input).map(result =>  result) // output resuls
+  document.getElementById('result').innerHTML = results
+}
